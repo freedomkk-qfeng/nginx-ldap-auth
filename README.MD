@@ -50,7 +50,7 @@ cfg.json example
     },
     "http": {
         "debug":false,
-		"ips":["127.0.0.1"], // api trust ips
+        "ips":["127.0.0.1"], // api trust ips
         "listen": "0.0.0.0:8080"
     }
 }
