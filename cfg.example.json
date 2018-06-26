@@ -14,15 +14,15 @@
             "deny":["127.0.0.1"],
             "direct":[""]
         },
-		"timeAcl":{
-			"deny":[],
-			"direct":[]
-		},
+        "timeAcl":{
+            "deny":[],
+            "direct":[]
+        },
         "allowUser":["user1"]
     },
     "http": {
         "debug":false,
-		"ips":["127.0.0.1"],
+        "ips":["127.0.0.1"],
         "listen": "0.0.0.0:8080"
     }
 }

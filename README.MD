@@ -40,12 +40,17 @@ cfg.json example
     "control":{
         "ipAcl":{
             "deny":["127.0.0.1","192.168.0.0/24","192.168.1.0-192.168.1.255"], // deny ips
-            "direct":[""] // direct ips
+            "direct":[] // direct ips
+        },
+        "timeAcl":{
+            "deny":["00:00-08:00","17:00-23:59"], // time deny
+            "direct":[]  // time direct
         },
         "allowUser":["user1"]  // user allowed to login, should be [] if all ldap users are allowed
     },
     "http": {
-        "debug":true,
+        "debug":false,
+		"ips":["127.0.0.1"], // api trust ips
         "listen": "0.0.0.0:8080"
     }
 }
