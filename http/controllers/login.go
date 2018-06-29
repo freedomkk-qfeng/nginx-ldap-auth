@@ -64,8 +64,6 @@ func (this *LoginController) Get() {
 	if utils.IpCheck(clientIP, DirectIPS) {
 		this.SetSession("uname", clientIP)
 		beego.Notice(fmt.Sprintf("%s - %s [%s] Login Successed: Direct IP", clientIP, clientIP, logtime))
-		beego.Notice(fmt.Sprintf("%s://%s:%d%s", this.Ctx.Input.Scheme(), this.Ctx.Input.Host(), this.Ctx.Input.Port(), target))
-		this.Ctx.Output.Header("Location", fmt.Sprintf("%s://%s:%d%s", this.Ctx.Input.Scheme(), this.Ctx.Input.Host(), this.Ctx.Input.Port(), target))
 		this.TplName = "direct.tpl"
 		return
 	}
@@ -75,8 +73,7 @@ func (this *LoginController) Get() {
 	}
 	if utils.TimeCheck(timeDirect) {
 		this.SetSession("uname", "timeDirect")
-		beego.Notice(fmt.Sprintf("%s - %s [%s] Login Successed: Direct Time", clientIP, clientIP, logtime))
-		this.Ctx.Output.Header("Location", fmt.Sprintf("%s://%s:%d%s", this.Ctx.Input.Scheme(), this.Ctx.Input.Host(), this.Ctx.Input.Port(), target))
+		beego.Notice(fmt.Sprintf("%s - %s [%s] Login Successed: Direct Time", clientIP, "timeDirect", logtime))
 		this.TplName = "direct.tpl"
 		return
 	}
